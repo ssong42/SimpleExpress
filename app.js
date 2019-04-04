@@ -1,15 +1,13 @@
 const express = require('express');
 const app = express()
-var api = require('termux-api').default;
+const api = require('termux')
 
 const port = 3000
 
 app.get('/', (req, res) => {
-    api.createCommand()
-        .vibrate()
-        .setDuration(1000)
-        .build()
-        .run();
+    api.vibrate()
+        .duration(1000)
+        .run()
     console.log("Connected")
     res.send('Hello World!')
 } )
