@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
         .setDuration(1000)
         .build()
         .run();
+    console.log("Connected")
     res.send('Hello World!')
 } )
 
